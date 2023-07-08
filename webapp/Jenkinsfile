@@ -24,7 +24,18 @@ pipeline {
         sh "docker run ${dockerImage.id} npm test"
       }
     }
- 
+   stage('Deploy Image') {
+      steps{
+        script {
+          docker.withRegistry( 'http://127.0.0.1:5000' ) {
+
+          }
+        }
+      }
+    }
+
+
+    
   }
 }
 
